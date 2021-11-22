@@ -22,7 +22,7 @@ const Admin = () => {
 
   
    // handle Cancel collection product..................... 
-   const handleDelete = (key) => {
+   const handleDelete = (key) => {  
      console.log(key);
      fetch(`https://grisly-werewolf-53088.herokuapp.com/adminPannel/${key}`, {
          method: 'DELETE',
@@ -77,7 +77,7 @@ const Admin = () => {
               </thead>
               
               <tbody>
-              {orders.map((pd) => (  
+              {orders.length? orders.map((pd) => (  
                 <tr>
                   <th scope="row">#</th>
                   <td>{pd?.name}</td>
@@ -85,14 +85,31 @@ const Admin = () => {
                   <td>{pd?._id}</td>
                   <td>{pd?.phone}</td>
                   { 
-                    pd.status === 'pending' ? <td onClick={()=> handleUpadate(pd._id)} className="text-light btn btn-success">Approved</td>
+                    pd.status === 'pending' ?
+                    <td onClick={()=> handleUpadate(pd._id)} className="text-light btn btn-success">Approved</td>
                     :
                     ''
                    }
-                  <td onClick={()=> handleDelete(pd.key)} className="text-light btn btn-danger">Delete</td>
-                  <td>{pd?.status}</td>
+                    <td onClick={()=> handleDelete(pd.key)} className="text-light btn btn-danger">Delete</td>
+                    <td>{pd?.status}</td>
                 </tr>
-                ))}
+                ))
+               :
+                <div>
+                 <div class="spinner-grow text-primary" role="status">
+                   <span class="sr-only">Loading...</span>
+                 </div>
+                 <div class="spinner-grow text-secondary" role="status">
+                   <span class="sr-only">Loading...</span>
+                 </div>
+                 <div class="spinner-grow text-success" role="status">
+                   <span class="sr-only">Loading...</span>
+                 </div>
+                 <div class="spinner-grow text-danger" role="status">
+                   <span class="sr-only">Loading...</span>
+                 </div>
+               </div>
+              }
               </tbody>
             </table>
          </div>

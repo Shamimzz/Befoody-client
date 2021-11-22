@@ -11,7 +11,7 @@ const Booking = () => {
     const [Services, setService] = useState([]);
     const [isDelete, setIsDelete] = useState(false);
 
-    useEffect( ()=>{
+    useEffect( ()=>{ 
         fetch(`https://grisly-werewolf-53088.herokuapp.com/Services/${id}`)
          .then(res=> res.json())
          .then(data=> setService(data))
@@ -37,8 +37,6 @@ const Booking = () => {
 
     return (
         <div className="container">
-          {
-            Services && 
             <div className="Booking">
                <div>
                   <img id="img" src={Services?.img} alt=""/>
@@ -50,7 +48,6 @@ const Booking = () => {
                </div>
               </div>
            </div>
-          }
         </div>
     );
 };

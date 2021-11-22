@@ -17,6 +17,7 @@ import Footer from './components/Footer/Footer';
 import AddServices from './components/Services/AddServices/AddServices';
 import Admin from './components/Admin/Admin';
 import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
            </Route>
            <Route path="/about">
              <About></About>
+           </Route>
+           <Route path="/contact">
+             <Contact></Contact>
            </Route>
            <Route path="/addServices">
              <AddServices></AddServices>

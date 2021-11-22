@@ -8,7 +8,7 @@ const MyOrders = () => {
    const [users, setUsers] = useState([]);
    
 
-   // My Orders........
+  // My Orders........
    useEffect(() => {
        fetch(`https://grisly-werewolf-53088.herokuapp.com/confirmorder`)
        .then(res => res.json())
@@ -16,7 +16,6 @@ const MyOrders = () => {
           setUsers(data)
        });
    },[])
-
 
 
     return (
@@ -36,7 +35,7 @@ const MyOrders = () => {
               </thead>
               
               <tbody>
-              {users.map((pd, index) => (  
+              {users.length? users.map((pd, index) => (  
                 <tr>
                   <th scope="row">#</th>
                   <td>{pd?.name}</td>
@@ -45,7 +44,23 @@ const MyOrders = () => {
                   <td>{pd?.phone}</td>
                   <td>{pd?.status}</td>
                 </tr>
-                ))}
+                ))
+                :
+                <div>
+                <div class="spinner-grow text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-secondary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-success" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-danger" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+               </div>
+              }
               </tbody>
             </table>
          </div>

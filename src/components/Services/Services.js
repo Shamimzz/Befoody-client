@@ -23,7 +23,7 @@ const Services = () => {
      const product = (Services[index]);
      product.email = user.email;
 
-     fetch(`https://grisly-werewolf-53088.herokuapp.com/addToCart`, {
+     fetch(`https://grisly-werewolf-53088.herokuapp.com/addToCart`,{
          method: 'POST',
          headers: { "content-type": "application/json" },
          body: JSON.stringify(product),
@@ -69,7 +69,7 @@ const Services = () => {
                   <h6>{pd?.details.slice(0, 120)}</h6>              
                   <button  onClick={()=> handleOrderBtn(index)} className="btn btn-warning m-2">Order Now</button>
                 </div>
-              </div>
+              </div>  
             ))
             :
             <div>

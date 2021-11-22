@@ -17,7 +17,7 @@ const PlaceOrder = () => {
     fetch(`https://grisly-werewolf-53088.herokuapp.com/placeorder`,{
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data), 
     })
      .then(res => res.json())
      .then(data=> {
@@ -67,7 +67,7 @@ const PlaceOrder = () => {
             required
             placeholder="Phone"
           /><br/>
-          <input
+          <inpu
             className="p-2 m-2"
             type="Date"
             {...register("Date")}
