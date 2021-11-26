@@ -1,7 +1,7 @@
 # Website Name: BeFoofy
-Basically This is Food delivery website. it has some food serveres, order sections, my orders, wish-list with some google authentificaton.
+➢ Basically This is Food delivery website. it has some food services, order sections, my orders, wish-list with some google authentificaton.
 
-➢ This is the Befoody website based on Delivery System & Fully responsive.
+➢ Fully responsive Mobile & tab viewport avaiable.
 
 ➢ Users can Log in via ( Email & password, Google, Facebook, Github) with firebase 
    authentication.
